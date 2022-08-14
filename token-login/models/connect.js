@@ -1,14 +1,20 @@
 const Promise = require('bluebird');
-const appConfig = require('../config/app');
+const appConfig = require('../../config/configdb.json');
 const mysql = require('mysql')
 exports.connect = (bu) => {
+	console.log(bu)
 	return new Promise((resolve, reject) => {
 		let connection = mysql.createConnection({
-			user: appConfig[bu].user,
-			password: appConfig[bu].password,
-			host: appConfig[bu].server,
-			database: appConfig[bu].DB,
-			port: appConfig[bu].port,
+			// user: appConfig[bu].user,
+			// password: appConfig[bu].password,
+			// host: appConfig[bu].server,
+			// database: appConfig[bu].DB,
+			// port: appConfig[bu].port,
+			user: "root",
+			password: "melfindos009",
+			host: "127.0.0.1",
+			database: "article",
+			port: "3306",
 			max: 10,
 			min: 0,
 			idleTimeoutMillis: 30000

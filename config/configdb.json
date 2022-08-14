@@ -1,0 +1,9 @@
+{
+    "article":{
+            "user": "root",
+			"password":"melfindos009",
+			"host": "127.0.0.1",
+			"database": "article",
+			"port": "3306"
+    }
+}
