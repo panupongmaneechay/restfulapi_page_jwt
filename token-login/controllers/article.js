@@ -28,12 +28,12 @@ exports.createArticle = (req, res) => {
     }
 
     exports.updateProfile = (req, res) => {
-        let fname = req.body.fname;
-        let lname = req.body.lname;
-        let tel = req.body.tel;
-        let email = req.body.email;
-        let username = req.body.username;
-        let picture = req.body.picture;
+        let fname = req.body.fname || '';
+        let lname = req.body.lname || '';
+        let tel = req.body.tel || '';
+        let email = req.body.email || '';
+        let username = req.body.username || '';
+        let picture = req.body.picture || '';
             APIModel.updateProfile(fname,lname,tel,email,username,picture).then((recordset) => {
                 return res.status(200).json({
                     "status": "success",
