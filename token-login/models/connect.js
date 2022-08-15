@@ -1,8 +1,7 @@
 const Promise = require('bluebird');
-const appConfig = require('../../config/configdb.json');
+// const appConfig = require('../../config/configdb.json');
 const mysql = require('mysql')
-exports.connect = (bu) => {
-	console.log(bu)
+exports.connect = () => {
 	return new Promise((resolve, reject) => {
 		let connection = mysql.createConnection({
 			// user: appConfig[bu].user,

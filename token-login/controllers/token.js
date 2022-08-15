@@ -1,6 +1,4 @@
 const jwt = require('jsonwebtoken');
-const dbconfig = require('../../config/configdb.json')
-const bu = Object.keys(dbconfig)[0]
 const APIModel = require('../models/article')
 const config = require('../../config/config.json')
 
@@ -9,7 +7,7 @@ exports.tokenAuth = (req, res) => {
 
     let username = req.body.username;
     let password = req.body.password;
-    APIModel.getUsername(username,password, bu).then((recordset) => {
+    APIModel.getUsername(username,password).then((recordset) => {
 
       let token = jwt.sign(
         { "user_id": username, password },
