@@ -8,5 +8,6 @@ const article = require('../controllers/article');
 router.post('/v1/auth' ,token_auth.tokenAuth);
 //get post Article
 router.get('/v1/article/get',token_verify.verifyToken, article.getArticle);
-
+router.post('/v1/article/create',token_verify.verifyToken, article.createArticle);
+router.post('/v1/profile/update',token_verify.verifyToken, article.updateProfile);
 module.exports = router;

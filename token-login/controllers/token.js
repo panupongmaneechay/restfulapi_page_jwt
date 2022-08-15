@@ -17,11 +17,17 @@ exports.tokenAuth = (req, res) => {
         }
       );
       if(recordset.length > 0){
+        console.log(recordset[0].email)
         return res.status(200).json({
           "username": username,
           "status": "success",
           "message": "Success",
-          "accessToken" : token
+          "accessToken" : token,
+          "fname": recordset[0].fname,
+          "lname": recordset[0].lname,
+          "tel": recordset[0].tel,
+          "email" : recordset[0].email,
+          "picture" : recordset[0].picture
       });
       }else {
         // console.log({"Error": "Invalid Username"})
